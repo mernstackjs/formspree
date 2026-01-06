@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Become a Customer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #777;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Become a Customer</h2>
+
+    <form action="#" method="post">
+        <!-- Name -->
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" required>
+
+        <!-- Phone -->
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <!-- Email (Optional) -->
+        <label for="email">Email (Optional)</label>
+        <input type="email" id="email" name="email">
+        <span class="note">We will only contact you if needed.</span>
+
+        <!-- Reason Section -->
+        <label for="reason">Reason to Become a Customer *</label>
+        <select id="reason" name="reason" required>
+            <option value="">-- Select a Reason --</option>
+            <option value="service">Interested in Services</option>
+            <option value="product">Interested in Products</option>
+            <option value="support">Need Customer Support</option>
+            <option value="other">Other</option>
+        </select>
+
+        <!-- Additional Message -->
+        <label for="message">Additional Details (Optional)</label>
+        <textarea id="message" name="message" placeholder="Tell us more about your needs..."></textarea>
+
+        <!-- Submit -->
+        <button type="submit">Submit Request</button>
+    </form>
+</div>
+
+</body>
+</html>
