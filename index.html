@@ -7,7 +7,7 @@
 
     <style>
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, sans-serif;
             background: #f4f6f8;
             margin: 0;
             padding: 0;
@@ -16,15 +16,14 @@
         .container {
             max-width: 500px;
             margin: 40px auto;
-            background: #ffffff;
+            background: #fff;
             padding: 25px;
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         h2 {
             text-align: center;
-            margin-bottom: 20px;
             color: #333;
         }
 
@@ -49,25 +48,25 @@
             min-height: 80px;
         }
 
-        .note {
-            font-size: 12px;
-            color: #777;
-        }
-
         button {
             width: 100%;
             margin-top: 20px;
             padding: 12px;
-            background-color: #007bff;
+            background: #007bff;
             color: #fff;
-            font-size: 16px;
             border: none;
+            font-size: 16px;
             border-radius: 5px;
             cursor: pointer;
         }
 
         button:hover {
-            background-color: #0056b3;
+            background: #0056b3;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #777;
         }
     </style>
 </head>
@@ -76,36 +75,42 @@
 <div class="container">
     <h2>Become a Customer</h2>
 
-    <form action="#" method="post">
-        <!-- Name -->
-        <label for="name">Full Name *</label>
-        <input type="text" id="name" name="name" required>
+    <form action="https://formspree.io/f/xqeavveo" method="POST">
 
-        <!-- Phone -->
-        <label for="phone">Phone Number *</label>
-        <input type="tel" id="phone" name="phone" required>
+        <!-- Required Fields -->
+        <label>Full Name *</label>
+        <input type="text" name="name" required>
 
-        <!-- Email (Optional) -->
-        <label for="email">Email (Optional)</label>
-        <input type="email" id="email" name="email">
-        <span class="note">We will only contact you if needed.</span>
+        <label>Phone Number *</label>
+        <input type="tel" name="phone" required>
 
-        <!-- Reason Section -->
-        <label for="reason">Reason to Become a Customer *</label>
-        <select id="reason" name="reason" required>
-            <option value="">-- Select a Reason --</option>
-            <option value="service">Interested in Services</option>
-            <option value="product">Interested in Products</option>
-            <option value="support">Need Customer Support</option>
-            <option value="other">Other</option>
+        <!-- Optional -->
+        <label>Email <span class="note">(Optional)</span></label>
+        <input type="email" name="email">
+
+        <!-- Reason -->
+        <label>Reason to Become a Customer *</label>
+        <select name="reason" required>
+            <option value="">-- Select Reason --</option>
+            <option value="Interested in Services">Interested in Services</option>
+            <option value="Interested in Products">Interested in Products</option>
+            <option value="Customer Support">Customer Support</option>
+            <option value="Other">Other</option>
         </select>
 
-        <!-- Additional Message -->
-        <label for="message">Additional Details (Optional)</label>
-        <textarea id="message" name="message" placeholder="Tell us more about your needs..."></textarea>
+        <!-- Optional Message -->
+        <label>Additional Details <span class="note">(Optional)</span></label>
+        <textarea name="message" placeholder="Tell us more..."></textarea>
 
-        <!-- Submit -->
-        <button type="submit">Submit Request</button>
+        <!-- Formspree Settings -->
+        <input type="hidden" name="_subject" value="New Customer Request">
+        <input type="hidden" name="_template" value="table">
+
+        <!-- REQUIRED BY YOU -->
+        <input type="hidden" name="_next" value="https://mernstackjs.github.io/formspree/thankyou.html">
+        <input type="text" name="_gotcha" style="display:none">
+
+        <button type="submit">Submit</button>
     </form>
 </div>
 
